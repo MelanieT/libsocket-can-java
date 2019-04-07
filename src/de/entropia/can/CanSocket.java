@@ -137,6 +137,10 @@ public final class CanSocket implements Closeable {
             _canId = address;
         }
         
+        public int getAddress() {
+            return _canId & 0x1fffffff;
+        }
+
         public boolean isSetEFFSFF() {
             return _isSetEFFSFF(_canId);
         }
@@ -348,7 +352,7 @@ public final class CanSocket implements Closeable {
             return data;
         }
         
-        public CanInterface getCanInterfacae() {
+        public CanInterface getCanInterface() {
             return canIf;
         }
 
